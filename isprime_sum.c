@@ -1,5 +1,5 @@
 /*
-@date     20211028 18:11
+@date     20220104 20:11
 @author   sr
 @file     isprime_sum.c
 
@@ -16,12 +16,34 @@
 7 143
 */
 
-
 #include <stdio.h>
+
 int main(){
-    int a,b;
+    int m,n;
+    int cnt=0;
+    int sum=0;
 
-    scanf("");
-
+    scanf("%d %d", &m, &n);
+    if ( m==1 ){
+        m=2;
+    }
+    int i;
+    for ( i=m; i<=n; i++){
+        //判断是否为素数
+        int isPrime=1;
+        int k;
+        for ( k=2; k<i-1; k++ ){
+            if ( i%k==0 ){
+            isPrime=0;
+            break;
+            }
+        }
+        //素数统计
+        if (isPrime){
+            cnt++;
+            sum+=i;
+        }
+    }
+    printf("%d %d\n", cnt, sum);
+    return 0;
 }
-
