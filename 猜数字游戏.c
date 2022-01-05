@@ -35,16 +35,50 @@ Good Guess!
 #include <stdio.h>
 
 int main(){
-    int n=0;
+    int n;
+    int m;
     int cnt=0;
     int inp;
+    int finished=0;
 
-    scanf("%d %d", &n, &cnt);
+    scanf("%d %d", &n, &m);
     do{
         scanf("%d", &inp);
         cnt++;
-        if ( inp>n ){
-            printf("too");
+        if ( inp<0 ){
+            printf("Game Over\n");
+            finished=1;
         }
+        else if ( cnt>m )
+        {
+            printf("Game Over");
+            finished=1;
+        }
+        else if ( inp>n )
+        {
+            printf("too big\n");
+        }else if ( inp<n )
+        {
+            printf("too small\n");
+        }else //等于n
+        { 
+            if( cnt==1 )
+            {
+                printf("Bingo!\n");
+            }else if ( cnt>=4 )
+            {
+                printf("Good guess\n");
+            }else{
+                printf("Lucky You\n");
+            }
+            finished=1;
+        }
+        
     }while(!finished);
 }
+
+/*
+1. 通过变量finished控制是否退出循环；
+2. do先完成执行内容再进入循环体，while后接破循环条件；
+3. if条件...else if条件...else其他；
+*/
