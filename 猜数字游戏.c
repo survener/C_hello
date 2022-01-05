@@ -33,18 +33,18 @@ Good Guess!
 */
 
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
 
 int main(){
     int n=0;
     int cnt=0;
+    int inp;
 
-    //初始化
-    srand(time(0));
-    int number = rand()%100+1;
-    
-    
-
-
+    scanf("%d %d", &n, &cnt);
+    do{
+        scanf("%d", &inp);
+        cnt++;
+        if ( inp>n ){
+            printf("too");
+        }
+    }while(!finished);
 }
