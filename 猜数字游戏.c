@@ -75,6 +75,7 @@ int main(){
         }
         
     }while(!finished);
+    return 0;
 }
 
 /*
