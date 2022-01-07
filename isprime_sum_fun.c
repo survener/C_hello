@@ -54,4 +54,5 @@ int main(){
 
 /*
 1. 函数里面的return ret；注意位置，break跳出循环后函数能否返回相应的值；
+2. int isPrime(int i)，前面int指的是函数返回的结果类型为int；
 */
